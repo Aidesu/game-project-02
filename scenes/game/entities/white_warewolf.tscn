@@ -158,7 +158,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hp7x0")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack-1",
 "speed": 9.0
 }, {
@@ -273,19 +273,32 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 24.0
+
 [node name="WhiteWarewolf" type="Node2D" unique_id=2118626893]
 script = ExtResource("1_y45wb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=829761471]
 position = Vector2(0, -64)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"walk"
+animation = &"attack-1"
 autoplay = "walk"
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=496457424]
 position = Vector2(0, -32)
-target_position = Vector2(48, 0)
+target_position = Vector2(40, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=11880677]
 position = Vector2(0, -32)
-target_position = Vector2(-48, 0)
+target_position = Vector2(-40, 0)
+
+[node name="AttackZone-1" type="Area2D" parent="." unique_id=369821408]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone-1" unique_id=35295395]
+position = Vector2(32, -32)
+shape = SubResource("CircleShape2D_yf5fn")
+
+[connection signal="body_entered" from="AttackZone-1" to="." method="_on_attack_zone_1_body_entered"]
+[connection signal="body_exited" from="AttackZone-1" to="." method="_on_attack_zone_1_body_exited"]

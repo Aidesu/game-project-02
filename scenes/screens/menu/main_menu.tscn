@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://t1reqh78273s"]
 
+[ext_resource type="Script" uid="uid://jsn1f2w2uf8v" path="res://scenes/screens/menu/main_menu.gd" id="1_7yrjr"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_yf5fn"]
 
 [node name="MainMenu" type="Control" unique_id=870547038]
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7yrjr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=74550025]
 layout_mode = 1
@@ -44,7 +47,16 @@ offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1558433663]
+[node name="PlayBtn" type="Button" parent="VBoxContainer" unique_id=1558433663]
 layout_mode = 2
-text = "Blabla"
+text = "Play"
 icon = SubResource("CanvasTexture_yf5fn")
+
+[node name="QuitBtn" type="Button" parent="VBoxContainer" unique_id=1203077782]
+layout_mode = 2
+text = "Quit"
+icon = SubResource("CanvasTexture_yf5fn")
+
+[connection signal="button_down" from="VBoxContainer/PlayBtn" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitBtn" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/QuitBtn" to="." method="_on_quit_btn_button_down"]

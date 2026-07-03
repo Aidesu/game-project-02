@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bydnucjdu6y2b" path="res://scenes/game/entities/player.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://b1tcchqjj6wxb" path="res://scenes/game/entities/white_warewolf.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://dsb1hb280vdl2" path="res://scenes/maps/elements/coin.tscn" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://l3huysu87211" path="res://scenes/screens/hud.tscn" id="6_5i0tg"]
 
 [node name="Game" type="Node" unique_id=2137344344]
 
@@ -28,6 +29,14 @@ position = Vector2(-25, -76)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2012884068]
 zoom = Vector2(3, 3)
 limit_bottom = 260
+
+[node name="HUD" parent="Player/Camera2D" unique_id=200227396 instance=ExtResource("6_5i0tg")]
+unique_name_in_owner = true
+z_index = 100
+offset_left = 25.0
+offset_top = 76.0
+offset_right = 25.0
+offset_bottom = 76.0
 
 [node name="WhiteWarewolf" parent="." unique_id=2118626893 instance=ExtResource("3_0sr1o")]
 position = Vector2(-310, 56)

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://l3huysu87211"]
+
+[ext_resource type="Script" uid="uid://bp8xjo123v85s" path="res://scenes/screens/hud.gd" id="1_hxtk5"]
+
+[node name="HUD" type="Control" unique_id=200227396]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hxtk5")
+
+[node name="LifeLabel" type="Label" parent="." unique_id=767979858]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 39.0
+text = "LABEL"

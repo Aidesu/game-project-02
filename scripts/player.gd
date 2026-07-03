@@ -1,11 +1,28 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+var speed = 200.0
+
 const JUMP_VELOCITY = -400.0
+var life = 100
+
 
 @onready var sprite = $AnimatedSprite2D
+@onready var hud = %HUD
 
+func _ready() -> void:
+	hud.refreshLife.call_deferred(str(life))
+
+func damage(nmb):
+	life -= nmb
+	if life >= 1:
+		hud.refreshLife(str(life))
+	elif life <= 0:
+		print("Death")
+		sprite.play("death")
+		hud.refreshLife("0")
+		
+		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,15 +46,20 @@ func _physics_process(delta: float) -> void:
 		if direction == 0:
 			sprite.play("idle")
 		else:
-			sprite.play("walk")
+			if Input.is_action_pressed("sprint"):
+				speed = 400
+				sprite.play("run")
+			else:
+				speed = 200
+				sprite.play("walk")
 	else:
 		sprite.play("jump")
 		
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
