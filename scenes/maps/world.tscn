@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cbsxg2nqo0fpm"]
+
+[ext_resource type="Texture2D" uid="uid://cqaaobdw7t3s4" path="res://ressources/textures/maps/medieval/PNG/Background/Background_01.png" id="1_cbu1p"]
+[ext_resource type="Texture2D" uid="uid://bpqar7ae0u6l" path="res://ressources/textures/maps/medieval/PNG/Background/Background_02.png" id="2_lvkeh"]
+[ext_resource type="PackedScene" uid="uid://87ny5hi73s7u" path="res://scenes/maps/elements/platforme_01.tscn" id="31_mcdxi"]
+[ext_resource type="PackedScene" uid="uid://c6f8aoy3flaqf" path="res://scenes/maps/elements/platform_a_1.tscn" id="32_d3htb"]
+[ext_resource type="PackedScene" uid="uid://x5eea0g3p0l1" path="res://scenes/maps/elements/kill_zone.tscn" id="34_2yd16"]
+
+[sub_resource type="Animation" id="Animation_82pm8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(632, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_2yd16"]
+resource_name = "move"
+length = 6.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(632, 16), Vector2(1096, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4f42"]
+_data = {
+&"RESET": SubResource("Animation_82pm8"),
+&"move": SubResource("Animation_2yd16")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r4f42"]
+
+[node name="World" type="Node2D" unique_id=519324409]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=579805092]
+repeat_size = Vector2(1320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=27439696]
+position = Vector2(64, -96)
+texture = ExtResource("1_cbu1p")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1996459226]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=440136528]
+position = Vector2(64, -96)
+texture = ExtResource("2_lvkeh")
+
+[node name="Platform-A1" parent="." unique_id=703496297 instance=ExtResource("32_d3htb")]
+position = Vector2(632, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform-A1" unique_id=635071447]
+libraries/ = SubResource("AnimationLibrary_r4f42")
+autoplay = &"move"
+
+[node name="Platforms" type="Node2D" parent="." unique_id=1423927246]
+position = Vector2(432, 16)
+
+[node name="Platforme-01" parent="Platforms" unique_id=1076394171 instance=ExtResource("31_mcdxi")]
+
+[node name="Platforme-02" parent="Platforms" unique_id=777600979 instance=ExtResource("31_mcdxi")]
+position = Vector2(120, 0)
+
+[node name="Platforme-05" parent="Platforms" unique_id=461252682 instance=ExtResource("31_mcdxi")]
+position = Vector2(-480, 0)
+
+[node name="Platforme-09" parent="Platforms" unique_id=590513986 instance=ExtResource("31_mcdxi")]
+position = Vector2(-552, 48)
+rotation = 1.5707964
+
+[node name="Platforme-10" parent="Platforms" unique_id=1972646000 instance=ExtResource("31_mcdxi")]
+position = Vector2(-744, 56)
+
+[node name="Platforme-11" parent="Platforms" unique_id=2101010340 instance=ExtResource("31_mcdxi")]
+position = Vector2(-816, 48)
+rotation = 1.5707964
+
+[node name="Platforme-13" parent="Platforms" unique_id=2063198856 instance=ExtResource("31_mcdxi")]
+position = Vector2(-624, 56)
+
+[node name="Platforme-06" parent="Platforms" unique_id=344124676 instance=ExtResource("31_mcdxi")]
+position = Vector2(-360, 0)
+
+[node name="Platforme-07" parent="Platforms" unique_id=1466395043 instance=ExtResource("31_mcdxi")]
+position = Vector2(-240, 0)
+
+[node name="Platforme-08" parent="Platforms" unique_id=1494190522 instance=ExtResource("31_mcdxi")]
+position = Vector2(-120, 0)
+
+[node name="Platforme-12" parent="Platforms" unique_id=2129525321 instance=ExtResource("31_mcdxi")]
+position = Vector2(840, 0)
+
+[node name="Platforme-17" parent="Platforms" unique_id=1922640679 instance=ExtResource("31_mcdxi")]
+position = Vector2(-488, -320)
+
+[node name="Platforme-18" parent="Platforms" unique_id=1586654526 instance=ExtResource("31_mcdxi")]
+position = Vector2(-368, -320)
+
+[node name="Platforme-19" parent="Platforms" unique_id=2037138351 instance=ExtResource("31_mcdxi")]
+position = Vector2(-248, -320)
+
+[node name="Platforme-20" parent="Platforms" unique_id=1639825081 instance=ExtResource("31_mcdxi")]
+position = Vector2(-128, -320)
+
+[node name="KillZone" parent="." unique_id=824206618 instance=ExtResource("34_2yd16")]
+position = Vector2(240, 176)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=80927382]
+shape = SubResource("WorldBoundaryShape2D_r4f42")

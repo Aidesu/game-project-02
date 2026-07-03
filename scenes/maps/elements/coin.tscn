@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dsb1hb280vdl2"]
+
+[ext_resource type="Texture2D" uid="uid://c5t3whi3vt8p7" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_01.png" id="1_e1ctb"]
+[ext_resource type="Script" uid="uid://dwgpucnu6q1jn" path="res://scripts/elements/coin.gd" id="1_p1spd"]
+[ext_resource type="Texture2D" uid="uid://dgb2ryq10vove" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_02.png" id="2_p1spd"]
+[ext_resource type="Texture2D" uid="uid://chrv3caqmlwta" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_03.png" id="3_1mgd5"]
+[ext_resource type="Texture2D" uid="uid://ct3cj1h66lf1r" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_04.png" id="4_2kmyo"]
+[ext_resource type="Texture2D" uid="uid://bp34qfhtfvb58" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_05.png" id="5_o8bbu"]
+[ext_resource type="Texture2D" uid="uid://mg0ky2xdugwf" path="res://ressources/textures/maps/medieval/PNG/Collectable Object/Coin_06.png" id="6_6cvev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e1ctb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p1spd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1mgd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2kmyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o8bbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6cvev")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 12.0
+
+[node name="Coin" type="Area2D" unique_id=2132949870]
+collision_mask = 2
+script = ExtResource("1_p1spd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752483595]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.89560044
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=109292915]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

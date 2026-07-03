@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://6jqrvu1ei1qk"]
+
+[ext_resource type="PackedScene" uid="uid://cbsxg2nqo0fpm" path="res://scenes/maps/world.tscn" id="1_7h61r"]
+[ext_resource type="Script" uid="uid://bmi1b7sgh4cij" path="res://scenes/game/game_manager.gd" id="1_kelw5"]
+[ext_resource type="PackedScene" uid="uid://bydnucjdu6y2b" path="res://scenes/game/entities/player.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://b1tcchqjj6wxb" path="res://scenes/game/entities/white_warewolf.tscn" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://dsb1hb280vdl2" path="res://scenes/maps/elements/coin.tscn" id="5_lfrn8"]
+
+[node name="Game" type="Node" unique_id=2137344344]
+
+[node name="GameManager" type="Node" parent="." unique_id=946280614]
+unique_name_in_owner = true
+script = ExtResource("1_kelw5")
+
+[node name="ScoreLabel" type="Label" parent="GameManager" unique_id=177482868]
+z_index = 2
+offset_left = 60.0
+offset_top = -144.0
+offset_right = 201.0
+offset_bottom = -103.0
+text = "Feur"
+
+[node name="World" parent="." unique_id=519324409 instance=ExtResource("1_7h61r")]
+
+[node name="Player" parent="." unique_id=341611269 instance=ExtResource("2_0sr1o")]
+position = Vector2(-25, -76)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2012884068]
+zoom = Vector2(3, 3)
+limit_bottom = 260
+
+[node name="WhiteWarewolf" parent="." unique_id=2118626893 instance=ExtResource("3_0sr1o")]
+position = Vector2(-310, 56)
+
+[node name="Label" type="Label" parent="." unique_id=992154936]
+offset_left = -209.0
+offset_top = -89.0
+offset_right = -68.0
+offset_bottom = -48.0
+text = "Space to jump"
+
+[node name="Coins" type="Node" parent="." unique_id=236319482]
+
+[node name="Coin" parent="Coins" unique_id=2132949870 instance=ExtResource("5_lfrn8")]
+position = Vector2(139, -26)
+
+[node name="Coin2" parent="Coins" unique_id=334564804 instance=ExtResource("5_lfrn8")]
+position = Vector2(230, -26)
+
+[node name="Coin3" parent="Coins" unique_id=931072695 instance=ExtResource("5_lfrn8")]
+position = Vector2(313, -26)
+
+[node name="Coin4" parent="Coins" unique_id=881207107 instance=ExtResource("5_lfrn8")]
+position = Vector2(410, -26)
+
+[node name="Coin5" parent="Coins" unique_id=95858279 instance=ExtResource("5_lfrn8")]
+position = Vector2(507, -26)
