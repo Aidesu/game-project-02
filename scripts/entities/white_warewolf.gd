@@ -27,4 +27,4 @@ func _on_attack_zone_1_body_entered(body: Node2D) -> void:
 		body.damage(damage)
 
 func _on_attack_zone_1_body_exited(body: Node2D) -> void:
-	sprite.play("idle")
+	sprite.play("run")

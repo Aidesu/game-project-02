@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bmi1b7sgh4cij" path="res://scenes/game/game_manager.gd" id="1_kelw5"]
 [ext_resource type="PackedScene" uid="uid://bydnucjdu6y2b" path="res://scenes/game/entities/player.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://b1tcchqjj6wxb" path="res://scenes/game/entities/white_warewolf.tscn" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://dqk1a2m8h6v5r" path="res://scenes/game/entities/white_warewolf_hunter.tscn" id="5_87uf6"]
 [ext_resource type="PackedScene" uid="uid://dsb1hb280vdl2" path="res://scenes/maps/elements/coin.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://l3huysu87211" path="res://scenes/screens/hud.tscn" id="6_5i0tg"]
+[ext_resource type="FontFile" uid="uid://g8v2cupjiuu3" path="res://ressources/fonts/TTF/dogica.ttf" id="6_bdhmt"]
 
 [node name="Game" type="Node" unique_id=2137344344]
 
@@ -44,8 +46,9 @@ position = Vector2(-310, 56)
 [node name="Label" type="Label" parent="." unique_id=992154936]
 offset_left = -209.0
 offset_top = -89.0
-offset_right = -68.0
+offset_right = -1.0
 offset_bottom = -48.0
+theme_override_fonts/font = ExtResource("6_bdhmt")
 text = "Space to jump"
 
 [node name="Coins" type="Node" parent="." unique_id=236319482]
@@ -64,3 +67,6 @@ position = Vector2(410, -26)
 
 [node name="Coin5" parent="Coins" unique_id=95858279 instance=ExtResource("5_lfrn8")]
 position = Vector2(507, -26)
+
+[node name="WhiteWarewolfHunter" parent="." unique_id=71512575 instance=ExtResource("5_87uf6")]
+position = Vector2(506, -79)

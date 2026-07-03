@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://l3huysu87211"]
 
 [ext_resource type="Script" uid="uid://bp8xjo123v85s" path="res://scenes/screens/hud.gd" id="1_hxtk5"]
+[ext_resource type="FontFile" uid="uid://g8v2cupjiuu3" path="res://ressources/fonts/TTF/dogica.ttf" id="2_v0tvv"]
 
 [node name="HUD" type="Control" unique_id=200227396]
 layout_mode = 3
@@ -12,9 +13,14 @@ grow_vertical = 2
 script = ExtResource("1_hxtk5")
 
 [node name="LifeLabel" type="Label" parent="." unique_id=767979858]
-layout_mode = 0
-offset_left = 16.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.005
+anchor_right = -0.005
+offset_left = 24.0
 offset_top = 16.0
-offset_right = 64.0
+offset_right = 104.0
 offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_v0tvv")
 text = "LABEL"
+metadata/_edit_use_anchors_ = true

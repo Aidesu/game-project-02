@@ -1,5 +1,9 @@
 extends Control
 
+@onready var mainPage = $Main
+@onready var settingsPage = $Settings
+@onready var creditPage = $Credit
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,10 +14,22 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-func _on_button_button_down() -> void:
+func _on_play_btn_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 	
 func _on_quit_btn_button_down() -> void:
 	get_tree().quit()
+
+func _on_settings_btn_button_down() -> void:
+	mainPage.hide()
+	settingsPage.show()
+	
+func _on_back_btn_button_down() -> void:
+	settingsPage.hide()
+	creditPage.hide()
+	mainPage.show()
+
+func _on_credit_btn_button_down() -> void:
+	mainPage.hide()
+	creditPage.show()
+	

@@ -22,7 +22,6 @@ func damage(nmb):
 		sprite.play("death")
 		hud.refreshLife("0")
 		
-		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

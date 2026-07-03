@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c6f8aoy3flaqf" path="res://scenes/maps/elements/platform_a_1.tscn" id="32_d3htb"]
 [ext_resource type="PackedScene" uid="uid://x5eea0g3p0l1" path="res://scenes/maps/elements/kill_zone.tscn" id="34_2yd16"]
 
+[sub_resource type="Gradient" id="Gradient_lvkeh"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.4745098, 0.654902, 0.9098039, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g4v7s"]
+gradient = SubResource("Gradient_lvkeh")
+
 [sub_resource type="Animation" id="Animation_82pm8"]
 length = 0.001
 tracks/0/type = "value"
@@ -48,6 +55,11 @@ _data = {
 
 [node name="World" type="Node2D" unique_id=519324409]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=505464416]
+position = Vector2(244.00012, -760)
+scale = Vector2(24.156248, 608)
+texture = SubResource("GradientTexture1D_g4v7s")
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=579805092]
 scroll_offset = Vector2(0, 16)
 repeat_size = Vector2(525, 0)
@@ -61,7 +73,7 @@ texture = ExtResource("1_cbu1p")
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1996459226]
 z_index = 3
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(0, -8)
+scroll_offset = Vector2(0, 17)
 repeat_size = Vector2(525, 0)
 repeat_times = 10
 
@@ -132,20 +144,17 @@ position = Vector2(-240, 0)
 [node name="Platforme-08" parent="Platforms" unique_id=1494190522 instance=ExtResource("31_mcdxi")]
 position = Vector2(-120, 0)
 
-[node name="Platforme-12" parent="Platforms" unique_id=2129525321 instance=ExtResource("31_mcdxi")]
-position = Vector2(840, 0)
-
 [node name="Platforme-17" parent="Platforms" unique_id=1922640679 instance=ExtResource("31_mcdxi")]
-position = Vector2(-488, -320)
+position = Vector2(-96, -80)
 
 [node name="Platforme-18" parent="Platforms" unique_id=1586654526 instance=ExtResource("31_mcdxi")]
-position = Vector2(-368, -320)
+position = Vector2(24, -80)
 
 [node name="Platforme-19" parent="Platforms" unique_id=2037138351 instance=ExtResource("31_mcdxi")]
-position = Vector2(-248, -320)
+position = Vector2(144, -80)
 
 [node name="Platforme-20" parent="Platforms" unique_id=1639825081 instance=ExtResource("31_mcdxi")]
-position = Vector2(-128, -320)
+position = Vector2(264, -80)
 
 [node name="KillZone" parent="." unique_id=824206618 instance=ExtResource("34_2yd16")]
 position = Vector2(240, 176)
