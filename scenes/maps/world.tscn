@@ -56,11 +56,13 @@ _data = {
 [node name="World" type="Node2D" unique_id=519324409]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=505464416]
+z_index = -15
 position = Vector2(244.00012, -760)
 scale = Vector2(24.156248, 608)
 texture = SubResource("GradientTexture1D_g4v7s")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=579805092]
+z_index = -10
 scroll_offset = Vector2(0, 16)
 repeat_size = Vector2(525, 0)
 repeat_times = 10
@@ -71,7 +73,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_cbu1p")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1996459226]
-z_index = 3
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(0, 17)
 repeat_size = Vector2(525, 0)
@@ -96,6 +97,30 @@ position = Vector2(432, 16)
 
 [node name="Platforme-02" parent="Platforms" unique_id=777600979 instance=ExtResource("31_mcdxi")]
 position = Vector2(120, 0)
+
+[node name="Platforme-03" parent="Platforms" unique_id=862207223 instance=ExtResource("31_mcdxi")]
+position = Vector2(776, 0)
+
+[node name="Platforme-04" parent="Platforms" unique_id=1153363824 instance=ExtResource("31_mcdxi")]
+position = Vector2(896, 0)
+
+[node name="Platforme-12" parent="Platforms" unique_id=1527270943 instance=ExtResource("31_mcdxi")]
+position = Vector2(1016, 0)
+
+[node name="Platforme-24" parent="Platforms" unique_id=1499183597 instance=ExtResource("31_mcdxi")]
+position = Vector2(1136, 0)
+
+[node name="Platforme-25" parent="Platforms" unique_id=1187780686 instance=ExtResource("31_mcdxi")]
+position = Vector2(1256, 0)
+
+[node name="Platforme-26" parent="Platforms" unique_id=1077391027 instance=ExtResource("31_mcdxi")]
+position = Vector2(1376, 0)
+
+[node name="Platforme-27" parent="Platforms" unique_id=726682258 instance=ExtResource("31_mcdxi")]
+position = Vector2(1496, 0)
+
+[node name="Platforme-28" parent="Platforms" unique_id=357462893 instance=ExtResource("31_mcdxi")]
+position = Vector2(1616, 0)
 
 [node name="Platforme-05" parent="Platforms" unique_id=461252682 instance=ExtResource("31_mcdxi")]
 position = Vector2(-480, 0)
